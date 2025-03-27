@@ -12,13 +12,12 @@ It is designed to make building production-ready blockchain data pipelines easy.
 
 - Pure `python` library. Don't need yaml, SQL, toml etc. 
 - High-level `datasets` API and flexible pipeline API.
-- `High-performance`, `low-cost` and `uniform` data access.
+- `High-performance`, `low-cost` and `uniform` data access. Ability to use advanced providers without platform lock-in.
 - Included functionality to `decode`, `validate`, `transform` blockchain data. All implemented in `rust` for performance. 
 - Write transformations using `polars`, `pyarrow`, `datafusion`, `pandas`, `duckdb` or any other `pyarrow` compatible library.
 - `Schema inference` automatically creates output tables. 
 - Keep datasets fresh with `continuous ingestion`.
-- `Optimized`, next batch of data is being fetched while your pre-processing function is running, while the database writes are being executed in parallel. Don't need to hand optimize anything.
-- Write transformations in any `Arrow` compatible library, `polars`, `pandas`, `datafusion`, `duckdb` and so on.
+- `Parallelized`, next batch of data is being fetched while your pre-processing function is running, while the database writes are being executed in parallel. Don't need to hand optimize anything.
 - Included library of transformations.
 - Included functionality to implement `crash-resistance`.
 
