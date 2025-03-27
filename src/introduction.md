@@ -51,7 +51,7 @@ Set `RUST_LOG` environment variable according to [env_logger docs](https://docs.
 
 To run an example with trace level logging for rust modules:
 ```
-RUST_LOG=trace uv run examples/{example_name}/main.py --provider {sqd or hypersync}
+RUST_LOG=trace uv run examples/path/to/my/example
 ```
 
 ## Development
