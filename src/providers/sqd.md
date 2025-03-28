@@ -30,5 +30,5 @@ For example you can use `https://portal.sqd.dev/datasets/arbitrum-nova` to get a
 
 Access to SQD portal API is free but slightly limited at the moment.
 
-You can deploy a portal to have unlimited access. You can contact us [in telegram](https://t.me/cherryframework) for help with deploying and maintaining portal instances. 
+You can deploy a portal to have unlimited access. You can contact us [in telegram](https://t.me/cherry_etl) for help with deploying and maintaining portal instances. 
 
