@@ -1,6 +1,6 @@
 # Iceberg
 
-# Config
+## Config
 
 ```python
 from pyiceberg.catalog import Catalog as IcebergCatalog
@@ -15,7 +15,7 @@ class IcebergWriterConfig:
 See [pyiceberg docs](https://py.iceberg.apache.org/).
 
 
-# Example
+## Example
 
 ```python
 from cherry_etl import config as cc

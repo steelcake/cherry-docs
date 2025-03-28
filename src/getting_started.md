@@ -1,4 +1,8 @@
-# Installation 
+# Getting Started
+
+This section explains how to install and use cherry.
+
+## Installation 
 
 Cherry is published to PyPI as [cherry-etl](https://pypi.org/project/cherry-etl/).
 
@@ -22,7 +26,7 @@ import cherry_etl
 import cherry_core
 ```
 
-# Using `datasets`
+## Using `datasets`
 
 Easiest way to start using cherry is to use the `datasets` feature. `datasets` make creating
 pipelines easy.
@@ -73,7 +77,7 @@ print(data)
 [Other datasets examples](https://github.com/steelcake/cherry/tree/main/examples/datasets)
 
 
-# Writing custom pipelines
+## Writing custom pipelines
 
 Cherry is able to do much more than just the `datasets` API.
 

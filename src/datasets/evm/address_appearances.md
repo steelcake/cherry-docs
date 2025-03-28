@@ -2,7 +2,7 @@
 
 Get appearances of addresses using traces. Including relationship of the address to the trace.
 
-# Output schema
+## Output schema
 
 - block_number: uint64
 - block_hash: binary

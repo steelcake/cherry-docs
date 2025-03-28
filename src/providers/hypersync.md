@@ -6,7 +6,7 @@ HyperSync currently supports [70+ EVM chains](https://docs.envio.dev/docs/HyperS
 
 Read more about it at the [offical documentation](https://docs.envio.dev/docs/HyperSync/overview).
 
-# Example ProviderConfig
+## Example ProviderConfig
 
 ```python
 from cherry_core import ingest
@@ -20,7 +20,7 @@ provider = ingest.ProviderConfig(
 
 You can get an url for a desired chain from the [supported networks page](https://docs.envio.dev/docs/HyperSync/hypersync-supported-networks).
 
-# Getting API token
+## Getting API token
 
 HyperSync is currently free and unlimited but it is transitioning into [API Tokens](https://docs.envio.dev/docs/HyperSync/api-tokens). 
 

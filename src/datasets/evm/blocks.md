@@ -2,7 +2,7 @@
 
 Get block headers
 
-# Output schema
+## Output schema
 
 - number: uint64 
 - hash: string 

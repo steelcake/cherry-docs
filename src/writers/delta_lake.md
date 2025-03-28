@@ -1,6 +1,6 @@
 # DeltaLake
 
-# Config
+## Config
 
 ```python
 @dataclass
@@ -14,7 +14,7 @@ class DeltaLakeWriterConfig:
 
 `Dict[str, _]` fields generally mean config per table name for example partition_by["my_table"] would give list of columns to partition the `my_table` table by.
 
-# Example
+## Example
 
 data_uri = "./data"
 
@@ -27,7 +27,7 @@ writer = cc.Writer(
 )
 ```
 
-# Anchor table
+## Anchor table
 
 All tables are written in parallel but anchor table is written seperately so it can be used to implement `crash-resistance`.
 
