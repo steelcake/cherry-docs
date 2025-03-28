@@ -16,6 +16,7 @@
     - [Ethereum (EVM)](./datasets/evm/README.md)
         - [address_appearances](./datasets/evm/address_appearances.md)
         - [blocks](./datasets/evm/blocks.md)
+        - [all_contracts](./datasets/evm/all_contracts.md)
     - [Solana (SVM)](./datasets/svm/README.md)
         - [token_balances](./datasets/svm/token_balances.md)
 - [Restarting from where you left off](./restart_from_block.md)
