@@ -68,7 +68,7 @@ async def sync_data():
 
 asyncio.run(sync_data())
 
-data = connection.sql("SELECT * FROM blocks LIMIT 20")
+data = db.sql("SELECT * FROM blocks LIMIT 20")
 print(data)
 ```
 
