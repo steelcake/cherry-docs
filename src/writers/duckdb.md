@@ -4,7 +4,7 @@ We highly recommend duckdb for development and testing as it is very solid and e
 
 Read their [python docs](https://duckdb.org/docs/stable/clients/python/overview.html)
 
-# Config
+## Config
 
 ```python
 @dataclass
@@ -16,7 +16,7 @@ Warning: Do not pass a `duckdb.DuckDBPyConnection` directly if you are using it 
 use `connection.cursor()` to create a cursor and pass that instead.
 `
 
-# Example
+## Example
 
 ```python
 # create an in-memory duckdb database

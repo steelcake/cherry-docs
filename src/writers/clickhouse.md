@@ -1,6 +1,6 @@
 # ClickHouse
 
-# Config
+## Config
 
 ```python
 @dataclass
@@ -15,7 +15,7 @@ class ClickHouseWriterConfig:
 
 `Dict[str, _]` fields generally mean config per table name for example codec["my_table"]["my_column"] would give the codec to use for my_column column of my_table table.
 
-# Example
+## Example
 
 ```python
 from cherry_etl import config as cc
@@ -60,7 +60,7 @@ writer = cc.Writer(
 )
 ```
 
-# Anchor table
+## Anchor table
 
 All tables are written in parallel but anchor table is written seperately so it can be used to implement `crash-resistance`.
 

@@ -11,7 +11,7 @@ Warning: Data starts from block slot `317617480` when using solana with sqd.
 Read more at the [official documentation](https://docs.sqd.ai/).
 
 
-# Example ProviderConfig
+## Example ProviderConfig
 
 ```python
 from cherry_core import ingest
@@ -26,9 +26,9 @@ You can change `solana-beta` with any dataset name from the [supported networks 
 
 For example you can use `https://portal.sqd.dev/datasets/arbitrum-nova` to get arbitrum-nova data.
 
-# Deploying portals
+## Deploying portals
 
 Access to SQD portal API is free but slightly limited at the moment.
 
-You can deploy a portal to have unlimited access. You can contact us [in telegram](https://t.me/cherryframework) for help with deploying and maintaining portal instances. 
+You can deploy a portal to have unlimited access. You can contact us [in telegram](https://t.me/cherry_etl) for help with deploying and maintaining portal instances. 
 

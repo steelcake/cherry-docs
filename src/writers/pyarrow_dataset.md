@@ -4,7 +4,7 @@ See the documentation to learn more about [arrow datasets](https://arrow.apache.
 
 This is the writer you want if you just want a directory of parquet files.
 
-# Config
+## Config
 
 ```python
 @dataclass
@@ -29,7 +29,7 @@ class PyArrowDatasetWriterConfig:
 
 See [pyarrow docs](https://arrow.apache.org/docs/python/generated/pyarrow.dataset.write_dataset.html#pyarrow.dataset.write_dataset) for more explanation about the parameters.
 
-# Example
+## Example
 
 ```python
 from cherry_eth import config as cc

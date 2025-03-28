@@ -30,5 +30,5 @@
     - [Steps](./pipeline/steps.md)
     - [Writing Custom Steps](./pipeline/custom_steps.md)
 - [Appendix](./appendix/README.md)
-    - [Polars and Decimal types (UInt256)](./polars_and_decimal.md)
+    - [Polars and Decimal types (UInt256)](./appendix/polars_and_decimal.md)
 

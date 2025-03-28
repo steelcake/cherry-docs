@@ -1,5 +1,7 @@
 # cherry-docs
 
+This is the documentation for [cherry](https://github.com/steelcake/cherry), python library for building blockchain data pipelines.
+
 ## License
 
 Licensed under either of
