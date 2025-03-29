@@ -1,0 +1,76 @@
+---
+layout: landing
+title: Cherry ETL - Blockchain Data Pipelines
+description: High-performance, Pythonic library for building production-ready blockchain data pipelines with support for multiple chains and data sinks.
+---
+
+import { HomePage, Sponsors } from 'vocs/components'
+
+<HomePage.Root>
+  <div style={{ marginBottom: '32px' }}>
+    <img 
+      src="/cherry-logo.png" 
+      alt="Cherry Logo" 
+      style={{ 
+        height: '120px', 
+        width: 'auto',
+        margin: '0 auto',
+        display: 'block'
+      }} 
+    />
+  </div>
+  <HomePage.Tagline>Build Production-Ready Blockchain Data Pipelines in Python</HomePage.Tagline>
+  
+  <div style={{ marginBottom: '32px', textAlign: 'center' }}>
+    <div style={{ marginBottom: '16px', fontWeight: 500 }}>Choose your preferred package manager:</div>
+    
+    :::code-group
+    
+    ```bash [pip]
+    pip install cherry-etl cherry-core
+    ```
+    
+    ```bash [uv]
+    uv add cherry-etl cherry-core
+    ```
+    
+    :::
+  </div>
+
+  <HomePage.Description>
+    Cherry is a high-performance, low-cost, and Pythonic library making it easy
+    to ingest, transform, and save blockchain data from multiple sources (EVM, SVM)
+    to various destinations (ClickHouse, Delta Lake, Iceberg, DuckDB, Parquet).
+  </HomePage.Description>
+
+  <HomePage.Buttons>
+    <HomePage.Button href="/getting_started" variant="accent">Get started</HomePage.Button>
+    <HomePage.Button href="https://github.com/steelcake/cherry">GitHub</HomePage.Button>
+  </HomePage.Buttons>
+</HomePage.Root>
+
+<div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '80px 0' }}>
+  <div className="features-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
+    <div style={{ border: '1px solid var(--vp-c-divider)', borderRadius: '12px', padding: '24px' }}>
+      <h3 style={{ marginTop: 0, fontSize: '1.5rem' }}>Multi-Chain Support</h3>
+      <p style={{ margin: 0, lineHeight: '1.6' }}>Ingest data uniformly from EVM (via HyperSync, SQD) and Solana (via SQD, Yellowstone GRPC).</p>
+    </div>
+    
+    <div style={{ border: '1px solid var(--vp-c-divider)', borderRadius: '12px', padding: '24px' }}>
+
+      <h3 style={{ marginTop: 0, fontSize: '1.5rem' }}>Flexible Outputs</h3>
+      <p style={{ margin: 0, lineHeight: '1.6' }}>Write data to ClickHouse, Iceberg, Delta Lake, DuckDB, Parquet, and Arrow Datasets.</p>
+    </div>
+    
+    <div style={{ border: '1px solid var(--vp-c-divider)', borderRadius: '12px', padding: '24px' }}>
+
+      <h3 style={{ marginTop: 0, fontSize: '1.5rem' }}>Developer Friendly</h3>
+      <p style={{ margin: 0, lineHeight: '1.6' }}>Pure Python API, high-level Datasets, schema inference, crash resistance, and clear logging.</p>
+    </div>
+  </div>
+</div>
+
+<div className="sponsors-section" style={{ textAlign: 'center', marginTop: '40px', marginBottom: '80px' }}>
+  <h2 style={{ fontSize: '2rem', marginBottom: '32px' }}>Sponsors</h2>
+  <Sponsors name="Our Sponsors" />
+</div>

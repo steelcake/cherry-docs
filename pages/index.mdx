@@ -1,0 +1,48 @@
+---
+layout: landing
+title: Cherry Documentation
+description: Cherry is a python library for building blockchain data pipelines.
+---
+
+import { HomePage } from 'vocs/components'
+
+<HomePage.Root>
+  <HomePage.Tagline>Python library for building blockchain data pipelines</HomePage.Tagline>
+  <HomePage.Description>
+    Cherry is designed to make building production-ready blockchain data pipelines easy.
+  </HomePage.Description>
+  <HomePage.Buttons>
+    <HomePage.Button href="/getting_started" variant="accent">Get started</HomePage.Button>
+    <HomePage.Button href="https://github.com/steelcake/cherry">GitHub</HomePage.Button>
+  </HomePage.Buttons>
+</HomePage.Root>
+
+## Features
+
+- Pure `python` library. Don't need yaml, SQL, toml etc. 
+- High-level `datasets` API and flexible pipeline API.
+- `High-performance`, `low-cost` and `uniform` data access. Ability to use advanced providers without platform lock-in.
+- Included functionality to `decode`, `validate`, `transform` blockchain data. All implemented in `rust` for performance. 
+- Write transformations using `polars`, `pyarrow`, `datafusion`, `pandas`, `duckdb` or any other `pyarrow` compatible library.
+- `Schema inference` automatically creates output tables. 
+- Keep datasets fresh with `continuous ingestion`.
+- `Parallelized`, next batch of data is being fetched while your pre-processing function is running, while the database writes are being executed in parallel.
+- Included library of transformations.
+- Included functionality to implement `crash-resistance`.
+
+## Data providers
+
+| Provider            | Ethereum (EVM) | Solana (SVM)  |
+|---------------------|----------------|---------------|
+| [HyperSync](https://docs.envio.dev/docs/HyperSync/overview) | ✅ | ❌ |
+| [SQD](https://docs.sqd.ai/)             | ✅ | ✅ |
+| [Yellowstone-GRPC](https://github.com/rpcpool/yellowstone-grpc) | ❌ | ✅ |
+
+## Supported output formats
+
+- **ClickHouse**
+- **Iceberg**
+- **Deltalake**
+- **DuckDB**
+- **Arrow Datasets**
+- **Parquet** 
