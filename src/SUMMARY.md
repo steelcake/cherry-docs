@@ -23,6 +23,7 @@
 - [Logging](./logging.md)
 - [Writing Custom Pipelines](./pipeline/README.md)
     - [Query](./pipeline/query.md)
+        - [Log Filtering Guide](./pipeline/query.md#log-filtering-guide)
     - [Data Schema](./pipeline/schema/README.md)
         - [Ethereum (EVM)](./pipeline/schema/evm.md)
         - [Solana (SVM)](./pipeline/schema/svm.md)
