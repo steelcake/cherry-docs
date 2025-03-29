@@ -33,18 +33,128 @@ query = ingest.Query(
 )
 ```
 
-In this example we are creating an EVM query that is looking for logs that match our single `LogRequest`. We could pass multiple `LogRequest`s and
-it would return logs mathing **any** of our log requests.
+This example creates an EVM query looking for logs matching a single `LogRequest`. 
 
-The fields inside the request correspond to the columns of the table. For example `topic0` in our `LogRequest` corresponds to the `topic0` column of the `logs` table in `EVM` dataset.
-Each field gives a list of values, the request will match the logs that have any of these values in this field. For example, if we pass multiple values inside `topic0` field of our `LogRequest`,
-we would expect to get all logs that have **any** of the values we passed in `LogRequest.topic0` field.
+`include_` fields determine if related data should be included. For example, `include_blocks=True` means the response will contain the blocks table with the blocks containing the matched logs.
 
-If we pass multiple fields into a request object, we will get objects that match **all** of those criteria. For example if we passed a couple values in `topic1` field of the same `LogRequest`,
-we would get logs that match the `topic0` filter **and** the `topic1` filter. So fields in the same request have a **and** relationship between them. 
 
-Include fields are for including other object that are related to the object we are querying for. For example if we set `include_blocks=True` this means we will get `blocks` table and it will
-contain the blocks of the logs that we matched with this `LogRequest`.
+## Log Filtering
+
+The core filtering behaviors are:
+
+1. **Between multiple `LogRequest` objects**: When multiple `LogRequest` objects are provided, logs matching ANY of them will be returned (OR logic).
+
+2. **Between different fields in the same `LogRequest`**: When multiple fields are specified (e.g., `address` AND `topic0`), logs matching ALL criteria will be returned (AND logic).
+
+3. **Within a single field**: When multiple values are provided for one field (e.g., multiple addresses in the `address` field), logs matching ANY of those values will be returned (OR logic).
+
+
+### OR Mode: Separate Log Requests
+Use separate log requests to match events that satisfy ANY of the conditions:
+
+```python
+logs=[
+    # Will match USDC Transfer OR WETH Approval
+    LogRequest(address=[USDC], topic0=[TRANSFER_TOPIC]),
+    LogRequest(address=[WETH], topic0=[APPROVAL_TOPIC])
+]
+```
+Results:
+```
+┌─────────────┬──────────┐
+│ address     ┆ topic0   │
+╞═════════════╪══════════╡
+│ USDC        ┆ Transfer │  # Only USDC Transfers
+│ WETH        ┆ Approval │  # Only WETH Approvals
+└─────────────┴──────────┘
+```
+
+### CROSS JOIN: Multiple Values in Single Request
+Put multiple values in a single request to match ALL combinations:
+
+```python
+logs=[
+    LogRequest(
+        address=[USDC, WETH],
+        topic0=[TRANSFER_TOPIC, APPROVAL_TOPIC]
+    )
+]
+```
+Results:
+```
+┌─────────────┬──────────┐
+│ address     ┆ topic0   │
+╞═════════════╪══════════╡
+│ WETH        ┆ Approval │  # All possible combinations
+│ WETH        ┆ Transfer │  # of addresses and topics
+│ USDC        ┆ Approval │  # will be matched
+│ USDC        ┆ Transfer │
+└─────────────┴──────────┘
+```
+
+#### Common Use Cases
+
+1. **Track specific events from multiple contracts:**
+   ```python
+   logs=[
+       LogRequest(
+           address=[CONTRACT_A, CONTRACT_B, CONTRACT_C],
+           topic0=[SPECIFIC_EVENT_TOPIC]
+       )
+   ]
+   ```
+
+2. **Track multiple events from a specific contract:**
+   ```python
+   logs=[
+       LogRequest(
+           address=[SPECIFIC_CONTRACT],
+           topic0=[EVENT_1_TOPIC, EVENT_2_TOPIC, EVENT_3_TOPIC]
+       )
+   ]
+   ```
+
+3. **Track specific event combinations:**
+   ```python
+   logs=[
+       LogRequest(address=[CONTRACT_A], topic0=[EVENT_X_TOPIC]),
+       LogRequest(address=[CONTRACT_B], topic0=[EVENT_Y_TOPIC])
+   ]
+   ```
+
+### Filtering by Indexed Parameters (topic1, topic2, etc.)
+
+For EVM events, indexed parameters are stored in the topics array (topic1, topic2, etc.). You can filter by these parameters to get more specific results:
+
+```python
+# Filter Transfer events where "from" address is specific
+from_address = "0x000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"  # Padded to 32 bytes
+transfer_topic0 = cherry_core.evm_signature_to_topic0("Transfer(address,address,uint256)")
+
+query = ingest.Query(
+    kind=ingest.QueryKind.EVM,
+    params=ingest.evm.Query(
+        from_block=20123123,
+        to_block=20123223,
+        logs=[
+            ingest.evm.LogRequest(
+                topic0=[transfer_topic0],
+                topic1=[from_address],  # Filter by 'from' address (first indexed parameter)
+                include_blocks=True,
+            )
+        ],
+        fields=ingest.evm.Fields(
+            # Fields definition...
+        ),
+    ),
+)
+```
+
+**Important notes about indexed parameters:**
+1. Topic values should be padded to 32 bytes (for addresses, prepend with zeros)
+2. For addresses, the correct format is: `"0x000000000000000000000000" + address[2:]`
+3. Parameter ordering follows the indexed parameters in the event signature
+4. Non-indexed parameters are encoded in the `data` field and can't be filtered directly
 
 ## Field Selection
 
