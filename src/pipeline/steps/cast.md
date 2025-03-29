@@ -7,11 +7,10 @@ Cast columns to specified arrow types.
 class CastConfig:
     table_name: str
     mappings: Dict[str, pa.DataType]
-    safe: Optional[bool] = None
-    options: Optional[pa_compute.CastOptions] = None
+    allow_decode_fail: bool = False
 ```
 
-See pyarrow cast function [documentation](https://arrow.apache.org/docs/python/generated/pyarrow.compute.cast.html) for more info about the parameters.
+When `allow_decode_fail` is set to `True`, this step will write `null` if it fails to cast a value instead of erroring out.
 
 ## Example
 
