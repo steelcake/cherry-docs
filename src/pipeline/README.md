@@ -8,3 +8,8 @@ There are three components of a pipeline.
 - The transformed data is written to the output using the **writer** in the end.
 
 We already covered **Provider** and **Writer** in the previous pages so we will cover writing **queries** and **steps** in this section.
+
+## Example
+
+Here is a simple example pipeline that ingests and decodes erc20 transfers into duckdb: [source code](https://github.com/steelcake/cherry/blob/main/examples/eth/erc20_custom.py).
+
