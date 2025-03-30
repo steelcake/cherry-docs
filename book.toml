@@ -1,6 +1,0 @@
-[book]
-authors = ["Ozgur Akkurt"]
-language = "en"
-multilingual = false
-src = "src"
-title = "Cherry Documentation"

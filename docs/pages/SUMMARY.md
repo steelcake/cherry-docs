@@ -1,0 +1,34 @@
+# Summary
+
+- [Introduction](./introduction.md)
+- [Getting started](./getting_started.md)
+- Providers
+    - [HyperSync](./providers/hypersync.md)
+    - [SQD](./providers/sqd.md)
+    - [Yellowstone-GRPC](./providers/yellowstone_grpc.md)
+- Writers
+    - [ClickHouse](./writers/clickhouse.md)
+    - [DeltaLake](./writers/delta_lake.md)
+    - [DuckDB](./writers/duckdb.md)
+    - [Iceberg](./writers/iceberg.md)
+    - [PyArrowDataset(Parquet)](./writers/pyarrow_dataset.md)
+- Datasets
+    - Ethereum (EVM)
+        - [address_appearances](./datasets/evm/address_appearances.md)
+        - [blocks](./datasets/evm/blocks.md)
+    - Solana (SVM)
+        - [token_balances](./datasets/svm/token_balances.md)
+- [Restarting from where you left off](./restart_from_block.md)
+- [Crash resistance](./crash_resistance.md)
+- [Logging](./logging.md)
+- Writing Custom Pipelines
+    - [Query](./pipeline/query.md)
+        - [Log Filtering Guide](./pipeline/query.md#log-filtering-guide)
+    - Data Schema
+        - [Ethereum (EVM)](./pipeline/schema/evm.md)
+        - [Solana (SVM)](./pipeline/schema/svm.md)
+    - [Steps](./pipeline/steps.md)
+    - [Writing Custom Steps](./pipeline/custom_steps.md)
+- Appendix
+    - [Polars and Decimal types (UInt256)](./appendix/polars_and_decimal.md)
+

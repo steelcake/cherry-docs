@@ -1,19 +1,23 @@
 {
-    "name": "cherry",
-    "version": "0.0.0",
-    "type": "module",
-    "scripts": {
-        "dev": "vocs dev",
-        "build": "vocs build",
-        "preview": "vocs preview"
-    },
-    "dependencies": {
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0",
-        "react-router-dom": "^6.22.3"
-    },
-    "devDependencies": {
-        "vocs": "^1.0.0-alpha.57",
-        "typescript": "^5.4.2"
-    }
+  "name": "cherry",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vocs dev",
+    "build": "vocs build",
+    "preview": "vocs preview"
+  },
+  "dependencies": {
+    "@tabler/icons-react": "^3.31.0",
+    "clsx": "^2.1.1",
+    "react": "latest",
+    "react-dom": "latest",
+    "tailwind-merge": "^3.0.2"
+  },
+  "devDependencies": {
+    "@types/react": "latest",
+    "typescript": "latest",
+    "vocs": "^1.0.11"
+  }
 }

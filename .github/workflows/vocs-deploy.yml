@@ -3,17 +3,22 @@ name: Deploy Docs
 on:
   push:
     branches:
-      - main
-  workflow_dispatch:
+      - '*'  # Run on all branches
+  pull_request:  # Run on PRs
+  workflow_dispatch:  # Allows manual triggering
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  deployments: write
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pages: write
-      id-token: write
-
+    environment:
+      name: ${{ github.event_name == 'pull_request' && format('pr-preview-{0}', github.event.number) || 'github-pages' }}
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -27,20 +32,18 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        working-directory: cherry
         run: npm ci
 
       - name: Build Vocs site
-        working-directory: cherry
         run: npm run build
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      - name: Upload artifact
+      - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './cherry/.vocs/dist'
+          path: dist
 
       - name: Deploy to GitHub Pages
         id: deployment
