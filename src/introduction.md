@@ -2,7 +2,6 @@
 
 [![PyPI](https://img.shields.io/badge/PyPI-lightgreen?style=for-the-badge&logo=pypi&labelColor=white)](https://pypi.org/project/cherry-etl/)
 [![Telegram](https://img.shields.io/badge/Telegram-darkgray?style=for-the-badge&logo=telegram)](https://t.me/cherry_etl)
-[![Documentation](https://img.shields.io/badge/documentation-blue?style=for-the-badge&logo=readthedocs)](https://steelcake.github.io/cherry-docs/)
 [![GitHub](https://img.shields.io/badge/github-black?style=for-the-badge&logo=github)](https://github.com/steelcake/cherry)
 
 Cherry is a python library for building blockchain data pipelines.
@@ -43,32 +42,11 @@ See [getting started section](https://steelcake.github.io/cherry-docs/getting_st
 - **Arrow Datasets**
 - **Parquet**
 
-## Usage examples
+## Examples
 
-- [**Ethereum(EVM)** examples](examples/eth)
-- [**Solana(SVM)** examples](examples/solana)
+See [examples on github.](https://github.com/steelcake/cherry/tree/main/examples)
 
-## Logging
-
-Python code uses the standard `logging` module of python, so it can be configured according to [python docs](https://docs.python.org/3/library/logging.html).
-
-Set `RUST_LOG` environment variable according to [env_logger docs](https://docs.rs/env_logger/latest/env_logger/#enabling-logging) in order to see logs from rust modules.
-
-To run an example with trace level logging for rust modules:
-```
-RUST_LOG=trace uv run examples/path/to/my/example
-```
-
-## Development
-
-This repo uses `uv` for development.
-
-- Format the code with `uv run ruff format`
-- Lint the code with `uv run ruff check`
-- Run type checks with `uv run pyright`
-- Run the tests with `uv run pytest`
-
-Core libraries we use for ingesting/decoding/validating/transforming blockchain data are implemented in [cherry-core](https://github.com/steelcake/cherry-core) repo.
+And [getting started section](https://steelcake.github.io/cherry-docs/getting_started.html).
 
 ## License
 
@@ -80,12 +58,6 @@ Licensed under either of
    ([LICENSE-MIT](LICENSE-MIT) or http://opensource.org/licenses/MIT)
 
 at your option.
-
-## Contribution
-
-Unless you explicitly state otherwise, any contribution intentionally submitted
-for inclusion in the work by you, as defined in the Apache-2.0 license, shall be
-dual licensed as above, without any additional terms or conditions.
 
 ## Sponsors
 
