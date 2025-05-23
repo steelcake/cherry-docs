@@ -1,4 +1,4 @@
-# Writing Custom Pipelines
+# Writing Pipelines
 
 There are three components of a pipeline.
 
@@ -11,5 +11,5 @@ We already covered **Provider** and **Writer** in the previous pages so we will 
 
 ## Example
 
-Here is a simple example pipeline that ingests and decodes erc20 transfers into duckdb: [source code](https://github.com/steelcake/cherry/blob/main/examples/eth/erc20_custom.py).
+Here is a simple example pipeline that ingests and decodes erc20 transfers into duckdb: [source code](https://github.com/steelcake/cherry/blob/main/examples/erc20_custom.py)
 
