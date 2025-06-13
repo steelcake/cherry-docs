@@ -35,7 +35,7 @@ You can deploy a portal to have unlimited access. You can contact us [in telegra
 
 ## Soldexer
 
-<img src="../../img/soldexer_logo_purple.png" alt="Soldexer Logo" width="200"/>
+<img src="soldexer_logo_purple.png" alt="Soldexer Logo" width="200"/>
 
 Soldexer is SQD's Typescript Solana indexer and an alternative to Cherry specifically designed for Solana's historical and real-time data.
 
