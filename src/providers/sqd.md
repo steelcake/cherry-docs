@@ -32,3 +32,13 @@ Access to SQD portal API is free but slightly limited at the moment.
 
 You can deploy a portal to have unlimited access. You can contact us [in telegram](https://t.me/cherry_etl) for help with deploying and maintaining portal instances. 
 
+
+## Soldexer
+
+![Soldexer Logo|200](../../img/soldexer_logo_purple.png)
+
+Soldexer is SQD's Typescript Solana indexer and an alternative to Cherry specifically designed for Solana's historical and real-time data.
+
+SQD Network by SQD provides the decentralized infrastructure that powers both Cherry and Soldexer. The network's 2,900+ worker nodes ensure reliable data processing and transparent architecture.
+
+Learn more at [soldexer.dev](https://www.soldexer.dev/) and check out the [GitHub repository](https://github.com/subsquid-labs/soldexer) which contains example for a [DEx swaps on Solana](https://github.com/subsquid-labs/soldexer/blob/main/src/indexers/swaps.ts), [Metaplex NFT metada](https://github.com/subsquid-labs/soldexer/blob/main/src/indexers/metaplex.ts) or [pump.fun tokens](https://github.com/subsquid-labs/soldexer/blob/main/src/indexers/pumpfun.ts).
